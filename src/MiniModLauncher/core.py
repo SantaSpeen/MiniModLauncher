@@ -12,7 +12,7 @@ class Core:
 
     debug = False
     __version__ = '0.0.1'
-    dir = Path("./mml")
+    dir = Path("./MiniModLauncher")
 
     def __init__(self):
         self.run = False
