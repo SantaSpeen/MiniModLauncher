@@ -1,3 +1,6 @@
 {
-  "langs": ["en", "ru"]
+  "langs": {
+    "en": "https://raw.githubusercontent.com/SantaSpeen/MiniModLauncher/master/src/lang/english.json",
+    "ru": "https://raw.githubusercontent.com/SantaSpeen/MiniModLauncher/master/src/lang/russian.json"
+  }
 }
