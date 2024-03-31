@@ -5,8 +5,12 @@ import zipfile
 from datetime import datetime
 
 from loguru import logger
-
-from .core import Core
+from main import parser
+from MiniModLauncher.core import Core
+args, _ = parser.parse_known_args()
+if args.version:
+    print(f"{Core.__title__}:\n    Version: {Core.__version__}\n    Build: {Core.__build__}")
+    exit(0)
 
 log_dir = Core.dir / "logs"
 log_file = log_dir / "info.log"
@@ -34,4 +38,6 @@ if sys.stdout:
 if Core.debug:
     logger.add(log_dir / "debug.log", level=0, backtrace=True, diagnose=True)
 logger.success("Logger initialized.")
-logger.info(f"Starting MiniModLauncher ({Core.__version__})..")
+logger.info(f"Starting {Core.__title__} ({Core.__version__})..")
+
+core = Core(args)
